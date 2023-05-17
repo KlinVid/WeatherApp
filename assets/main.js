@@ -3,8 +3,9 @@ const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
+const input = document.querySelector('.search-box input');
 
-search.addEventListener('click', () => {
+function handleSearch() {
 
     const APIKey = 'da2c3ebca588063c909031dcacd9cfaf';
     const city = document.querySelector('.search-box input').value;
@@ -50,6 +51,9 @@ search.addEventListener('click', () => {
                     case 'Haze': image.src = 'assets/img/haze.png';
                     break;
 
+                    case 'Thunderstorm': image.src = 'assets/img/thunderstorm.png';
+                    break;
+
                     default: image.src = '';
                 }
 
@@ -67,6 +71,12 @@ search.addEventListener('click', () => {
                 container.style.height = '590px';
             });
 
+};
 
+input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  });
 
-});
+search.addEventListener('click', handleSearch);
