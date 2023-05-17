@@ -53,7 +53,7 @@ body {
 .container {
     position: relative;
     width: 400px;
-    height: 105px;
+    height: 605px;
     background: #fff;
     padding: 28px 32px;
     overflow: hidden;
@@ -97,14 +97,21 @@ body {
 }
 
 .search-box button:hover {
-    color: #fff;
     background: #06283d;
 }
 
-.search-box i {
-    position: absolute;
-    color: #06283d;
-    font-size: 28px;
+.search-box button:hover svg path{
+    stroke: #fff; 
+    fill: #fff;
+}
+
+.search-box svg, .search-box button svg {
+    width: 20px;
+}
+
+svg path {
+    stroke: #06283d; 
+    fill: #06283d;
 }
 
 .weather-box {
@@ -161,9 +168,8 @@ body {
     padding-right: 20px;
 }
 
-.weather-details i {
-    color: #06283d;
-    font-size: 26px;
+.weather-details svg {
+    width: 26px;
     margin: 6px 10px 0 0;
 }
 
